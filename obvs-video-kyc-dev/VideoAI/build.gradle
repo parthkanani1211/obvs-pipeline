@@ -82,4 +82,5 @@ doLast {
     println firstNumber
     String result = buildFile.getText().replaceFirst("version='$version'","version='" + firstNumber + "." + increment + "'")
     buildFile.setText(result)
+        }
 }
