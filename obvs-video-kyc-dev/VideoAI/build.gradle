@@ -69,6 +69,7 @@ jar {
     }
 }
 
+version '1.0.0'
 task increment{
     def v=buildFile.getText().find(version) //get this build file's text and extract the version value
     String minor=v.substring(v.lastIndexOf('.')+1) //get last digit
