@@ -68,7 +68,13 @@ jar {
     }
 }
 
-version='1.0.0'
+android {
+    defaultConfig {
+        versionCode 3
+        versionName '1.0.0'
+    }
+}
+
 class Version {
 
     private int major
