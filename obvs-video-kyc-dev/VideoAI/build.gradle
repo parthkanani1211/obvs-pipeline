@@ -79,6 +79,6 @@ task incrementrevsion{
      String major=v.substring(0,v.lastIndexOf("."));       //get the beginning
      println major
      String s=buildFile.getText().replaceFirst("version='$version'","version='"+major+ "." +m+"'")
-     //println s
-     buildFile.setText(s) //replace the build file's text
+     println s
+     buildFile.writeText(s) //replace the build file's text
 }
