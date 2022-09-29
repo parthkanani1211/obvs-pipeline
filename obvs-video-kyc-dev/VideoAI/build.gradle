@@ -68,14 +68,19 @@ jar {
     }
 }
 
-version='1.0.0'  //version we need to change
+version = '1.0.1'
 
-task increment{
-    doLast{
-            String minor=version.substring(version.lastIndexOf('.')+1)
-            int m=minor.toInteger()+1
-            String major=version.substring(0,version.length()-1)
-            String s=buildFile.getText().replaceFirst("version='$version'","version='"+major+m+"'")
-            buildFile.setText(s)
-        }
+tasks.register("incrementVersion") {
+doLast {
+    def ver = version
+    println ver
+    String lastNumber = ver.substring(ver.lastIndexOf('.') + 1)
+    int increment = lastNumber.toInteger() + 1
+    println increment
+
+    String firstNumber = ver.substring(0, ver.lastIndexOf("."))
+    println firstNumber
+    String result = buildFile.getText().replaceFirst("version='$version'","version='" + firstNumber + "." + increment + "'")
+    buildFile.setText(result)
+}
 }
