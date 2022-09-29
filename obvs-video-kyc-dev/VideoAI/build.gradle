@@ -61,16 +61,6 @@ dependencies {
     compile 'com.google.cloud:google-cloud-vision:1.97.0'
 }
 
-task versionIncr {
-    Properties props = new Properties()
-    File propsFile = new File('gradle.properties')
-    props.load(propsFile.newDataInputStream())
-    Integer nextbuildnum = ( ((props.getProperty('artifactBuildNumber')) as BigDecimal) + 1 )
-    props.setProperty('artifactBuildNumber', nextbuildnum.toString())
-    props.store(propsFile.newWriter(), null)
-    props.load(propsFile.newDataInputStream())
-}
-
 jar {
     manifest {
         attributes(
