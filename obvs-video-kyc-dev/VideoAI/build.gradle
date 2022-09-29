@@ -70,17 +70,12 @@ jar {
 
 version='1.0.1'
 
-tasks.register("incrementVersion") {
-doLast {
-    def ver = version
-    println ver
-    String lastNumber = ver.substring(ver.lastIndexOf('.') + 1)
-    int increment = lastNumber.toInteger() + 1
-    println increment
+task increment {
 
-    String firstNumber = ver.substring(0, ver.lastIndexOf("."))
-    println firstNumber
-    String result = buildFile.getText().replaceFirst("version='$version'","version='" + firstNumber + "." + increment + "'")
-    buildFile.setText(result)
-        }
-}
+    def v = buildFile.getText().find(version)
+    def (major, minor, patch) = v.tokenize('.')
+    int newPatch = patch.toInteger() + 1
+    String newVersion = major + "." + minor + "." + newPatch
+    String updatedVersion = buildFile.getText().replaceFirst("version='"+v+"'","version='"+newVersion+"'")
+    buildFile.setText(updatedVersion)
+ }
