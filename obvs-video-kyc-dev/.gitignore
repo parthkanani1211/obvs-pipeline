@@ -1,0 +1,9 @@
+*/.idea/
+*/.gradle/
+**/.gradle/*
+**/saved_model.zip
+**/.idea/**
+**/build/**
+**/extraction_dir/**
+**/file_store/**
+**/saved_model.pb

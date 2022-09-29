@@ -1,0 +1,161 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="obvs" id="defaultPermissions">
+        <createTable tableName="permissions"
+                     remarks="A table to contain all the permissions">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="permissions">
+            <column name="id" valueNumeric="1" />
+            <column name="name" value="View"/>
+            <column name="type" value="VideoKYC"/>
+        </insert>
+
+        <insert tableName="permissions">
+            <column name="id" valueNumeric="2" />
+            <column name="name" value="Request"/>
+            <column name="type" value="VideoKYC"/>
+        </insert>
+
+        <insert tableName="permissions">
+            <column name="id" valueNumeric="3" />
+            <column name="name" value="Participate"/>
+            <column name="type" value="VideoKYC"/>
+        </insert>
+
+        <insert tableName="permissions">
+            <column name="id" valueNumeric="4" />
+            <column name="name" value="Serve"/>
+            <column name="type" value="VideoKYC"/>
+        </insert>
+
+        <insert tableName="permissions">
+            <column name="id" valueNumeric="5" />
+            <column name="name" value="ManageAll"/>
+            <column name="type" value="VideoKYC"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet author="obvs" id="defaultRoles">
+        <createTable tableName="roles"
+                     remarks="A table to contain all the roles">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="1" />
+            <column name="name" value="Admin"/>
+            <column name="description" value="Administrator of system"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="2" />
+            <column name="name" value="Maker"/>
+            <column name="description" value="Agent-Maker"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="3" />
+            <column name="name" value="Customer"/>
+            <column name="description" value="Customer"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="4" />
+            <column name="name" value="Basic"/>
+            <column name="description" value="Basic User"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="5" />
+            <column name="name" value="Auditor"/>
+            <column name="description" value="Auditor"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="6" />
+            <column name="name" value="Checker"/>
+            <column name="description" value="Agent-Checker"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="7" />
+            <column name="name" value="SuperAdmin"/>
+            <column name="description" value="Super Administrator of system"/>
+        </insert>
+
+        <insert tableName="roles">
+            <column name="id" valueNumeric="8" />
+            <column name="name" value="APIUser"/>
+            <column name="description" value="User with this role can make call to authenticate APIs"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet author="obvs" id="associateDefaultRoleAndPermissions">
+        <createTable tableName="role_permissions"
+                     remarks="A table to contain all the roles">
+            <column name="role_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="permission_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <addUniqueConstraint tableName="role_permissions"
+                             constraintName="role_permission"
+                             columnNames="role_id, permission_id" />
+
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1" />
+            <column name="permission_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1" />
+            <column name="permission_id" valueNumeric="2"/>
+        </insert>
+
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1" />
+            <column name="permission_id" valueNumeric="3"/>
+        </insert>
+
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1" />
+            <column name="permission_id" valueNumeric="4"/>
+        </insert>
+
+        <insert tableName="role_permissions">
+            <column name="role_id" valueNumeric="1" />
+            <column name="permission_id" valueNumeric="5"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

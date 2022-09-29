@@ -1,0 +1,552 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="obvs" id="Master_Community">
+        <createTable tableName="Master_Community"
+                     remarks="A table to contain all the master data">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" value="01"/>
+            <column name="data" value="HINDU"/>
+        </insert>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" value="02"/>
+            <column name="data" value="CHRISTIAN"/>
+        </insert>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" value="03"/>
+            <column name="data" value="BRAHMINS"/>
+        </insert>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="4"/>
+            <column name="code" value="04"/>
+            <column name="data" value="JAIN"/>
+        </insert>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="5"/>
+            <column name="code" value="05"/>
+            <column name="data" value="KASHMIRI HINDUS"/>
+        </insert>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="6"/>
+            <column name="code" value="06"/>
+            <column name="data" value="PARSI"/>
+        </insert>
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="7"/>
+            <column name="code" value="07"/>
+            <column name="data" value="SHIKH"/>
+        </insert>
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="8"/>
+            <column name="code" value="10"/>
+            <column name="data" value="SINDHI"/>
+        </insert>
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="9"/>
+            <column name="code" value="28"/>
+            <column name="data" value="MUSLIM"/>
+        </insert>
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="10"/>
+            <column name="code" value="29"/>
+            <column name="data" value="BUDDHISTS"/>
+        </insert>
+
+        <insert tableName="Master_Community">
+            <column name="id" valueNumeric="11"/>
+            <column name="code" value="XYZ"/>
+            <column name="data" value="OTHER"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet author="obvs" id="Master_Name_Prefix">
+        <createTable tableName="Master_Name_Prefix"
+                     remarks="A table to contain all the name prefix values">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="Master_Name_Prefix">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" value="Mr."/>
+            <column name="data" value="Mr."/>
+        </insert>
+        <insert tableName="Master_Name_Prefix">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" value="Miss."/>
+            <column name="data" value="Miss."/>
+        </insert>
+        <insert tableName="Master_Name_Prefix">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" value="Mrs."/>
+            <column name="data" value="Mrs."/>
+        </insert>
+        <insert tableName="Master_Name_Prefix">
+            <column name="id" valueNumeric="4"/>
+            <column name="code" value="Shree."/>
+            <column name="data" value="Shree."/>
+        </insert>
+        <insert tableName="Master_Name_Prefix">
+            <column name="id" valueNumeric="5"/>
+            <column name="code" value="Shri."/>
+            <column name="data" value="Shri."/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="obvs" id="Master_Marital_Status">
+        <createTable tableName="Master_Marital_Status"
+                     remarks="A table to contain all the name prefix values">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="Master_Marital_Status">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" value="01"/>
+            <column name="data" value="Married"/>
+        </insert>
+        <insert tableName="Master_Marital_Status">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" value="02"/>
+            <column name="data" value="Unmarried"/>
+        </insert>
+        <insert tableName="Master_Marital_Status">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" value="03"/>
+            <column name="data" value="Others"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="obvs" id="Master_Constitution">
+        <createTable tableName="Master_Constitution"
+                     remarks="A table to contain all the name prefix values">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" value="1"/>
+            <column name="data" value="NORMAL"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" value="2"/>
+            <column name="data" value="MINOR"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" value="3"/>
+            <column name="data" value="SENIOR CITIZEN"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="4"/>
+            <column name="code" value="4"/>
+            <column name="data" value="STAFF"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="5"/>
+            <column name="code" value="5"/>
+            <column name="data" value="EX-STAFF &amp; SENIOR CITIZEN"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="6"/>
+            <column name="code" value="6"/>
+            <column name="data" value="JOINT INDIVIDUAL"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="7"/>
+            <column name="code" value="7"/>
+            <column name="data" value="NOT DEFINED"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="8"/>
+            <column name="code" value="8"/>
+            <column name="data" value="PROPRIETORSHIP"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="9"/>
+            <column name="code" value="9"/>
+            <column name="data" value="PARTNERSHIP"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="10"/>
+            <column name="code" value="10"/>
+            <column name="data" value="PRIVATE LIMITED COMPANY"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="11"/>
+            <column name="code" value="11"/>
+            <column name="data" value="LIMITED COMPANY"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="12"/>
+            <column name="code" value="12"/>
+            <column name="data" value="TRUST"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="13"/>
+            <column name="code" value="13"/>
+            <column name="data" value="SOCIETY"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="14"/>
+            <column name="code" value="14"/>
+            <column name="data" value="ASSOCIATION"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="15"/>
+            <column name="code" value="15"/>
+            <column name="data" value="GROUP"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="16"/>
+            <column name="code" value="16"/>
+            <column name="data" value="HUF"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="17"/>
+            <column name="code" value="17"/>
+            <column name="data" value="LIMITED LIABILITY PARTNERSHIP"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="18"/>
+            <column name="code" value="18"/>
+            <column name="data" value="ESTATE AC"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="19"/>
+            <column name="code" value="19"/>
+            <column name="data" value="STAFF &amp; SENIOR CITIZEN"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="20"/>
+            <column name="code" value="20"/>
+            <column name="data" value="VRS STAFF"/>
+        </insert>
+        <insert tableName="Master_Constitution">
+            <column name="id" valueNumeric="21"/>
+            <column name="code" value="21"/>
+            <column name="data" value="EX-STAFF"/>
+        </insert>
+
+    </changeSet>
+
+    <changeSet author="obvs" id="Master_Occupation">
+        <createTable tableName="Master_Occupation"
+                     remarks="A table to contain all the name prefix values">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" value="02"/>
+            <column name="data" value="ELECTRICAL"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" value="03"/>
+            <column name="data" value="TEXTILE"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" value="05"/>
+            <column name="data" value="PAPER,PAPER PRODUCTS &amp; PRINTING."/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="4"/>
+            <column name="code" value="06"/>
+            <column name="data" value="RUBBER &amp; RUBBER PRODUCTS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="5"/>
+            <column name="code" value="07"/>
+            <column name="data" value="CEMENT."/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="6"/>
+            <column name="code" value="08"/>
+            <column name="data" value="IRON &amp; STEEL"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="7"/>
+            <column name="code" value="09"/>
+            <column name="data" value="SUGAR"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="8"/>
+            <column name="code" value="10"/>
+            <column name="data" value="CHEMICALS DYES, PAINTS ETC."/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="9"/>
+            <column name="code" value="11"/>
+            <column name="data" value="METAL &amp; METAL PRODUCTS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="10"/>
+            <column name="code" value="12"/>
+            <column name="data" value="VEGETABLE"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="11"/>
+            <column name="code" value="13"/>
+            <column name="data" value="TOBACCO &amp; TOBACCO PRODUCTS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="12"/>
+            <column name="code" value="14"/>
+            <column name="data" value="LEATHER &amp; LETHER PRODUCTS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="13"/>
+            <column name="code" value="15"/>
+            <column name="data" value="GEMS &amp; JEWELLERY"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="14"/>
+            <column name="code" value="16"/>
+            <column name="data" value="FOOD PROCESSING &amp; MANUFACTURING."/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="15"/>
+            <column name="code" value="17"/>
+            <column name="data" value="VEHICLES,VEHICLE PARTS &amp; TRANSPORT EQUIPMENT"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="16"/>
+            <column name="code" value="18"/>
+            <column name="data" value="MISCELLANEOUS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="17"/>
+            <column name="code" value="183"/>
+            <column name="data" value="BANK AGENT"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="18"/>
+            <column name="code" value="185"/>
+            <column name="data" value="SERVICE"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="19"/>
+            <column name="code" value="189"/>
+            <column name="data" value="RETIRED"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="20"/>
+            <column name="code" value="190"/>
+            <column name="data" value="HOUSE WIFE"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="21"/>
+            <column name="code" value="191"/>
+            <column name="data" value="STUDENT"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="22"/>
+            <column name="code" value="192"/>
+            <column name="data" value="BANK MANAGER"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="23"/>
+            <column name="code" value="194"/>
+            <column name="data" value="WORKER"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="24"/>
+            <column name="code" value="195"/>
+            <column name="data" value="NOT MENTION"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="25"/>
+            <column name="code" value="196"/>
+            <column name="data" value="KIRANA SHOP"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="26"/>
+            <column name="code" value="197"/>
+            <column name="data" value="CLOTH BUSINESS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="27"/>
+            <column name="code" value="198"/>
+            <column name="data" value="LABOUR WORK"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="28"/>
+            <column name="code" value="215"/>
+            <column name="data" value="NOT MENTIONED"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="29"/>
+            <column name="code" value="242"/>
+            <column name="data" value="APPLICATION SUPPORT ENGINEER"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="30"/>
+            <column name="code" value="244"/>
+            <column name="data" value="BUSINESS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="31"/>
+            <column name="code" value="247"/>
+            <column name="data" value="IT BUSINESS"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="32"/>
+            <column name="code" value="75"/>
+            <column name="data" value="TECHNCAL SUPPORT"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="33"/>
+            <column name="code" value="76"/>
+            <column name="data" value="DANCER"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="34"/>
+            <column name="code" value="78"/>
+            <column name="data" value="DEVELOPER"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="35"/>
+            <column name="code" value="81"/>
+            <column name="data" value="FARMER"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="36"/>
+            <column name="code" value="O-01"/>
+            <column name="data" value="Others - Professional"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="37"/>
+            <column name="code" value="O-02"/>
+            <column name="data" value="Others - Self Employed"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="38"/>
+            <column name="code" value="O-03"/>
+            <column name="data" value="Others - Retired"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="39"/>
+            <column name="code" value="O-05"/>
+            <column name="data" value="Others - Housewife"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="40"/>
+            <column name="code" value="S-01"/>
+            <column name="data" value="Service - Public Sector"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="41"/>
+            <column name="code" value="S-02"/>
+            <column name="data" value="Service - Private Sector"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="42"/>
+            <column name="code" value="S-03"/>
+            <column name="data" value="Service - Government Sector"/>
+        </insert>
+        <insert tableName="Master_Occupation">
+            <column name="id" valueNumeric="43"/>
+            <column name="code" value="X-01"/>
+            <column name="data" value="Not Categorised"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="obvs" id="Master_Residency_Status">
+        <createTable tableName="Master_Residency_Status"
+                     remarks="A table to contain all the name prefix values">
+            <column name="id" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="Master_Residency_Status">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" value="01"/>
+            <column name="data" value="Resident Individual"/>
+        </insert>
+
+        <insert tableName="Master_Residency_Status">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" value="02"/>
+            <column name="data" value="Non Resident Individual"/>
+        </insert>
+
+        <insert tableName="Master_Residency_Status">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" value="03"/>
+            <column name="data" value="Foreign National"/>
+        </insert>
+
+        <insert tableName="Master_Residency_Status">
+            <column name="id" valueNumeric="4"/>
+            <column name="code" value="04"/>
+            <column name="data" value="Person of Indian Origin"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
