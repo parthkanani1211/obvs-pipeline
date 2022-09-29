@@ -68,14 +68,18 @@ jar {
     }
 }
 
-version='1.0.0'
-task increment<<{
-    def v=buildFile.getText().find(version) //get this build file's text and extract the version value
-    String minor=v.substring(v.lastIndexOf('.')+1) //get last digit
-    int m=minor.toInteger()+1                      //increment
-    String major=v.substring(0,v.length()-1)       //get the beginning
-    //println m
-    String s=buildFile.getText().replaceFirst("version='$version'","version='"+major+m+"'")
-    //println s
-    buildFile.setText(s) //replace the build file's text
+version='1.0.1'
+
+tasks.register("incrementVersion") {
+doLast {
+    def ver = version
+    println ver
+    String lastNumber = ver.substring(ver.lastIndexOf('.') + 1)
+    int increment = lastNumber.toInteger() + 1
+    println increment
+
+    String firstNumber = ver.substring(0, ver.lastIndexOf("."))
+    println firstNumber
+    String result = buildFile.getText().replaceFirst("version='$version'","version='" + firstNumber + "." + increment + "'")
+    buildFile.setText(result)
 }
