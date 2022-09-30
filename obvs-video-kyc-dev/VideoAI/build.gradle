@@ -20,8 +20,8 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+apply from: 'version.gradle'
 group 'ai.obvs'
-version '1.0.0'
 
 ext {
     apacheCommonsIoVersion = '2.5'
@@ -68,12 +68,3 @@ jar {
         )
     }
 }
-
-task increment {
-    def v = buildFile.getText().find(version)
-    def (major, minor, patch) = v.tokenize('.')
-    int newPatch = patch.toInteger() + 1
-    String newVersion = major + "." + minor + "." + newPatch
-    String updatedVersion = buildFile.getText().replaceFirst("version='"+v+"'","version='"+newVersion+"'")
-    buildFile.setText(updatedVersion)
- }
