@@ -69,25 +69,11 @@ jar {
     }
 }
 
-task confirmProjectVersionIncremented() {
-    doLast {
-        def grgit = org.ajoberstar.grgit.Grgit.open(project.rootDir)
-
-        def describe = grgit.describe()
-        def lastVersion = com.github.zafarkhaja.semver.Version.valueOf(describe)
-        if(!''.equals(lastVersion.getPreReleaseVersion())) {
-            // git describe produced something like '0.20.7-1-gfbe61fd'
-            // split on '-' and recreate last as the first token
-            lastVersion = com.github.zafarkhaja.semver.Version.valueOf(describe.split('-')[0])
-        }
-
-        // read 'version' field from build.gradle
-        def currentVersion = com.github.zafarkhaja.semver.Version.valueOf(getVersion());
-        if ( currentVersion.greaterThan(lastVersion) ) {
-            // success, the project version is greater than the last one available via git describe
-            println "Version test successful: proposed version is " + currentVersion + " greater than last.released.version " + lastVersion
-        } else {
-            throw new GradleException("version field in build.gradle with current value " + currentVersion + " must be incremented past " + lastVersion)
-        }
-    }
-}
+task increment {
+    def v = buildFile.getText().find(version)
+    def (major, minor, patch) = v.tokenize('.')
+    int newPatch = patch.toInteger() + 1
+    String newVersion = major + "." + minor + "." + newPatch
+    String updatedVersion = buildFile.getText().replaceFirst("version='"+v+"'","version='"+newVersion+"'")
+    buildFile.setText(updatedVersion)
+ }
